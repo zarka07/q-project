@@ -1,0 +1,34 @@
+{
+    "products":[
+      {
+        "id": 1,
+        "title": "Картофель",
+        "energy": 105,
+        "rating": 5
+      },
+      {
+        "id": 2,
+        "title": "Морковь",
+        "energy": 50,
+        "rating": 4
+      },
+      {
+        "id": 3,
+        "title": "Чеснок",
+        "energy": 25,
+        "rating": 4
+      },
+      {
+        "id": 4,
+        "title": "Яблоко",
+        "energy": 30,
+        "rating": 5
+      },
+      {
+        "id": 5,
+        "title": "Фасоль",
+        "energy": 28,
+        "rating": 1
+      }
+    ]
+  }
