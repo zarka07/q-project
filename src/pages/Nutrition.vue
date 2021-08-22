@@ -29,6 +29,11 @@ export default {
   components:{
     Timer
   },
+  methods:{
+    showPagename(){
+      
+    }
+  },
   /*created: function() {
     axios.get('/assets/products.json').then(response => {
       this.products = response.data.products;

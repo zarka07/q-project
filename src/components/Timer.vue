@@ -10,16 +10,17 @@
       <q-item id="startTime" 
         class="flex inline shadow-box flex-center q-pt-md q-mb-lg"
         :class="`shadow-10`" 
-        style="border-radius:4px;background-color:#19d26c;color:black">Время начала: {{formattedStartTimer}} 
+        style="border-radius:4px;background-color:#19d26c;color:black;text-align:center">Время начала: {{formattedStartTimer}} 
       </q-item>
 
       <q-item v-if="endTimer" 
         class="flex inline shadow-box flex-center q-pt-md q-mb-lg"
         :class="`shadow-10`" 
         style="border-radius:4px;background-color:#19d26c;color:white">
-          С момента начала прошло: {{difference}} секунд (-ы)
+          С момента начала прошло: {{minutesCount()}} секунд (-ы)
       </q-item>
       
+
       <q-item  class="q-mb-lg">
         <q-spinner-clock id="spinner"
           v-show="showSpinner" 
@@ -68,7 +69,6 @@ export default {
       endTimer:null,
       formattedEndTimer:null,
       difference:null,
-      formattedDifference:null,
       progress:false,
       showStart:true,
       showSpinner:true,
@@ -95,11 +95,20 @@ export default {
         this.showSpinner=false
         this.showEnd=false
         this.endTimer=new Date()
-        console.log(this.endTimer)
-        this.difference=date.getDateDiff(this.endTimer,this.startTimer,unit)
-      this.onFin()
         
+        this.difference=date.getDateDiff(this.endTimer,this.startTimer,unit)
+        this.onFin()
       }, 
+      minutesCount(){
+        let timestamp = this.difference;
+        let hh = Math.floor(timestamp / 60 / 60)
+        let mm = Math.floor(timestamp / 60) - (hh * 60)
+        let ss = timestamp % 60
+        return ( [hh.toString().padStart(2, '0'),
+                mm.toString().padStart(2, '0'),
+                ss.toString().padStart(2, '0')
+              ].join(':'))
+      }
       
   },
 

@@ -5,10 +5,8 @@
           
             <p><b>{{pagename}}</b> подсчет времени</p>
             
-      </q-item>
+    </q-item>
     <div class=" q-ml-auto q-mr-auto q-mt-md">
-        
-
          <q-item class="flex flex-center q-mb-lg q-mt-lg">
           <Timer/>
         </q-item>
