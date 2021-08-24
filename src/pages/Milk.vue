@@ -1,11 +1,9 @@
 <template>
-    <q-item id="info" 
+    <!--<q-item id="info" 
         class=" q-ml-auto q-mr-auto q-mt-md"
         style="">
-          
-            <p><b>{{pagename}}</b> подсчет времени</p>
-            
-    </q-item>
+        <p><b>Подсчет времени</b> </p>
+    </q-item>-->
     <div class=" q-ml-auto q-mr-auto q-mt-md">
          <q-item class="flex flex-center q-mb-lg q-mt-lg">
           <Timer/>
@@ -42,13 +40,12 @@
     import { ref } from 'vue'
     export default {
         name:'milk',
-        title:'milk',
         components:{
             Timer
         },
         data(){
             return {
-                pagename: 'Сцеживание',
+                
             }
         },
         setup () {
@@ -81,13 +78,13 @@
 <style scoped>
     #info{
         max-width: 120pt;
-        height:40pt;
+        height:25pt;
         border-radius:4px;
         background-color:#19d26c;
         color:white;
         text-align: center;
-        padding-top: 5pt;
-        padding-bottom: 5pt;
+        padding-top: 8pt;
+        padding-bottom: 4pt;
     }
     .submit{
         margin-left:auto;

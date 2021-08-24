@@ -1,57 +1,48 @@
 <template>
     
-      <q-item id="info" 
+      <!--<q-item id="info" 
         class=" q-ml-auto q-mr-auto q-mt-md"
         style="">
-          
-            <p><b>{{pagename}}</b> подсчет времени</p>
-            
-    </q-item>
-    <div class=" q-ml-auto q-mr-auto q-mt-md">
+            <p><b>Подсчет времени</b> </p>
+      </q-item>-->
+      <div class=" q-ml-auto q-mr-auto q-mt-md">
          <q-item class="flex flex-center q-mb-lg q-mt-lg">
           <Timer/>
         </q-item>
-    </div>
+      </div>
     
 </template>
 
 <script>
-import Timer from 'components/Timer.vue'
+import Timer from 'components/Timer.vue';
+
 
 export default {
   name:'nutrition',
+ 
   data(){
     return {
-      pagename: 'Кормление'
+      
     }
-    
   },
   components:{
     Timer
   },
-  methods:{
-    showPagename(){
-      
-    }
+  methods: {
+    
   },
-  /*created: function() {
-    axios.get('/assets/products.json').then(response => {
-      this.products = response.data.products;
-      
-    });
-  }*/
 }
 </script>
 <style scoped>
     #info{
         max-width: 120pt;
-        height:50pt;
+        height:25pt;
         border-radius:4px;
         background-color:#19d26c;
         color:white;
         text-align: center;
-        padding-top: 5pt;
-        padding-bottom: 5pt;
+        padding-top: 8pt;
+        padding-bottom: 4pt;
     }
     .submit{
         margin-left:auto;

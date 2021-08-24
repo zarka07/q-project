@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
-      <q-toolbar>
+      <q-toolbar class="bg-primary glossy text-white">
         <q-btn
           flat
           dense
@@ -11,14 +11,23 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title >
-          <a href="/" clickable v-ripple target="_self" 
+      <q-avatar>
+        <img src="../assets/main.png">
+      </q-avatar>
+
+      <q-toolbar-title  >
+        <a href="/" clickable v-ripple target="_self" 
           style="color:white;text-decoration:none;">Мамин помощник</a>
-        </q-toolbar-title>
-        <div >
-          
-        </div>
+      </q-toolbar-title>
+
         
+
+        
+          <div class="routeName">{{$route.name}}</div>
+        
+
+        <q-space />
+
         <div id="date">{{today}}</div>
       </q-toolbar>
     </q-header>
@@ -54,7 +63,9 @@
 </template>
 
 <script>
-import EssentialLink from 'components/EssentialLink.vue'
+import EssentialLink from 'components/EssentialLink.vue';
+import nutrition from 'pages/Nutrition.vue';
+
 
 const linksList = [
   {
@@ -90,13 +101,21 @@ const linksList = [
     link: '#/settings'
   }
 ];
-import {date} from 'quasar'
+
+import { date } from 'quasar'
 import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
   
   components: {
-    EssentialLink
+    EssentialLink,
+    nutrition,
+  },
+  
+  data() {
+    return {
+      pagename: ''
+    }
   },
   setup () {
     const leftDrawerOpen = ref(false)
@@ -113,16 +132,18 @@ export default defineComponent({
     today(){
       let timeStamp = Date.now()
       return date.formatDate(timeStamp, 'Do MMMM')
-    },
-    /*timeNow(){
-          let timeStamp = Date.now()
-          return setInterval(function(){
-            date.formatDate(timeStamp, 'ss')
-          },1000)
-        },-----not work*/
-    
+    }    
   },
-
+  methods:{
+    //onShow(value){
+      //this.pagename = data
+      /*show(){
+          console.log('show from parent: ', this.pagename)
+      }*/
+      
+    //}
+  },
+  
 })
 
 </script>
@@ -131,6 +152,14 @@ export default defineComponent({
   .leftDrawerTitle{
     color:#19d26c
   }
-  
+  .routeName{
+    width:100pt;
+    border-radius:4px;
+    background-color:#ccecdb;
+    color:#19d26c;
+    text-align: center;
+    padding-top: 4pt;
+    padding-bottom: 4pt;
+  }
 
 </style>
